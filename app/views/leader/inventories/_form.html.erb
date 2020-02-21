@@ -1,0 +1,15 @@
+<div class="notes">
+	<span class="mark">*</span> 印の付いた項目は入力必須です。
+</div>
+<div>
+	<%= f.label :name, "名前", class: "required" %>
+	<%= f.text_field :name, class: "required" %>
+</div>
+<div>
+	<%= f.label :stock, "個数", class: "required" %>
+	<%= f.text_field :stock, class: "required" %>
+</div>
+<div class="check-boxes">
+	<%= f.check_box :not_used %>
+	<%= f.label :not_used, "使用禁止" %>
+</div>

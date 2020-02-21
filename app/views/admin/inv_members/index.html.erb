@@ -1,0 +1,45 @@
+<% @title = "職員管理" %>
+<h1><%= @title %></h1>
+
+<div class="table-wrapper">
+	<div class="links">
+		<%= link_to "新規登録", :new_admin_inv_member %>
+	</div>
+
+	<%= paginate @inv_members %>
+
+	<table class="listing">
+		<tr>
+			<th>氏名</th>
+			<th>フリガナ</th>
+			<th>ID</th>
+			<th>入社日</th>
+			<th>退社日</th>
+			<th>停止フラグ</th>
+			<th>リーダー</th>
+			<th>アクション</th>
+		</tr>
+		<% @inv_members.each do |m| %>
+			<% #p = invMemberPresenter.new(m, self) %>
+			<tr>
+				<td><%= m.family_name %><%= m.given_name %></td>
+				<td><%= m.family_name_kana %><%= m.given_name_kana %></td>
+				<td class="id"><%= m.inv_id %></td>
+				<td class="date"><%= m.start_date.strftime("%y/%m/%d") %></td>
+				<td class="date"><%= m.end_date.try(:strftime, "%y/%m/%d") %></td>
+				<td class="boolean"><%= m.suspended? ? raw("&#x2611") : raw("&#x2610") %></td>
+				<td class="boolean"><%= m.leader? ? raw("&#x2611") : raw("&#x2610") %></td>
+				<td>
+					<%= link_to "編集", [ :edit, :admin, m ] %> |
+					<%= link_to "削除", [ :edit, :admin, m ] %>
+				</td>
+			</tr>
+		<% end %>
+	</table>
+
+	<% #paginate @inv_members %>
+
+	<div class="links">
+		<%= link_to "新規登録", :new_admin_inv_member %>
+	</div>
+</div>

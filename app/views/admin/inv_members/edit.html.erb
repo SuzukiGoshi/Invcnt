@@ -1,0 +1,12 @@
+<% @title = "メンバーの編集" %>
+<h1><%= @title %></h1>
+
+<div id="generic-form">
+	<%= form_with model: @inv_member, url: [ :admin, @inv_member ] do |f| %>
+		<%= render "form", f: f %>
+		<div class="buttons">
+			<%= f.submit "更新" %>
+			<%= link_to "キャンセル", :admin_inv_members %>
+		</div>
+	<% end %>
+</div>

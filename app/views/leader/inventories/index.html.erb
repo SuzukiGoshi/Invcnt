@@ -1,0 +1,25 @@
+<% @title = "在庫管理" %>
+<h1><%= @title %></h1>
+
+<div class="table-wrapper">
+	<table class="inventory">
+		<tr>
+			<th>名前</th>
+			<th>個数</th>
+			<th>禁止フラグ</th>
+			<th>アクション</th>
+		</tr>
+		<% @inventories.each do |m| %>
+			<% #p = invMemberPresenter.new(m, self) %>
+			<tr>
+				<td><%= m.name %></td>
+				<td class="boolean">
+				<%= m.stock %></td>
+				<td class="boolean"><%= m.not_used? ? raw("&#x2611") : raw("&#x2610") %></td>
+				<td class="actions"><%= link_to "編集", [ :edit, :leader, m ] %></td>
+			</tr>
+		<% end %>
+	</table>
+
+	<% #paginate @inv_members %>
+</div>
