@@ -36,7 +36,7 @@ class Member::Base < ApplicationController
 			else
 				session.delete(:member_id)
 				flash.alert = "セッションがタイムアウトしました。"
-				redirect_to :membr_login
+				redirect_to :member_login
 			end
 		end
 	end
