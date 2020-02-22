@@ -5,8 +5,8 @@ class Member::Base < ApplicationController
 
 	private def current_member
 		if session[:member_id]
-			@current_inv_member ||=
-				InvMember.find_by(id: session[:member_id])
+			@current_member ||=
+				InvMember.find_by(inv_id: session[:member_id])
 		end
 	end
 
