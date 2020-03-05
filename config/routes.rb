@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   config = Rails.application.config.invcnt
-
+  
   constraints host: config[:admin][:host] do
     namespace :admin, path: config[:admin][:path] do
       root "top#index"

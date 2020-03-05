@@ -1,4 +1,4 @@
 Administrator.create!(
-	inv_id: "goshi",
-	password: "ps"
+	inv_id: "port",
+	password: "port"
 )
