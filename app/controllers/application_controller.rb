@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 		if params[:controller].match(%r{\A(leader|admin|member)/})
 			Regexp.last_match[1]
 		else
-			"home"
+			"member"
 		end
 	end
 end

@@ -1,7 +1,7 @@
 Rails.application.configure do
 	config.invcnt = {
-		leader: { host: "invcnt.app.com", path: ""},
-		admin: { host: "invcnt.app.com", path: "admin"},
-		member: { host: "invcnt.app.com", path: "member"}
+		leader: { host: "goshi2020.herokuapp.com", path: ""},
+		admin: { host: "goshi2020.herokuapp.com", path: "admin"},
+		member: { host: "goshi2020.herokuapp.com", path: "member"}
 	}
 end

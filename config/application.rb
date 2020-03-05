@@ -22,7 +22,7 @@ module Invcnt
       g.controller_specs false
       g.view_spacs false
     end
-    config.hosts << "goshi2020.com"
+    config.hosts << "goshi2020.herokuapp.com"
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
